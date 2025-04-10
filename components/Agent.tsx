@@ -21,7 +21,7 @@ const Agent = ({ userName }: AgentProps) => {
     return (
         <>
             <div className="call-view">
-                <div className="card-interview">
+                <div className="card-interviewer">
                     <div className="avatar">
                         <Image src="/ai-avatar.png" alt="vapi"
                                width={65} height={54} className="object-cover" />
@@ -30,8 +30,8 @@ const Agent = ({ userName }: AgentProps) => {
                     <h3>AI Interview</h3>
                 </div>
 
-                <div className="card-border">
-                    <div className="card-content">
+                <div className="card-border1">
+                    <div className="card-content border-red-400">
                         <Image src="/user-avatar.png" alt="user avatar" width={540} height={540} className="rounded-full object-cover size-[120px]" />
                         <h3>{userName}</h3>
                     </div>

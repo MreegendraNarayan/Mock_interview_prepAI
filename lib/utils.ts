@@ -1,6 +1,6 @@
-import { interviewCovers, mappings } from "@/constants";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import {interviewCovers, mappings} from "@/constants";
+import {type ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -31,14 +31,12 @@ export const getTechLogos = async (techArray: string[]) => {
     };
   });
 
-  const results = await Promise.all(
-      logoURLs.map(async ({ tech, url }) => ({
+  return await Promise.all(
+      logoURLs.map(async ({tech, url}) => ({
         tech,
         url: (await checkIconExists(url)) ? url : "/tech.svg",
       }))
   );
-
-  return results;
 };
 
 export const getRandomInterviewCover = () => {
